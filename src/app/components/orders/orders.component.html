@@ -1,0 +1,25 @@
+<!--<div class="row"  *ngFor="let order of orderItems">
+    <div style="overflow: hidden; display: flex; justify-content:space-around;">
+        <div class="card" style="width: 18rem;">
+            <!-- {{item.imageUrl}} 
+            <div class="card-body">
+                <h5 class="card-title">{{order.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{order.price}}</h6>
+                <p class="card-text">{{order.description}}</p>
+               
+                <button (click)="placeOrder(item)" class="btn btn-primary" >Place Order</button>                
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="row" *ngFor="let order of orderItems| async">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">{{order.name}}</h1>
+            <p class="lead">{{order.user}}</p>
+            <p class="lead">{{order.price}}</p>
+            <p class="lead">{{order.type}}</p>
+            <button (click)="removeOrder(order.id)"class="btn btn-danger">Cancel Order</button>
+        </div>
+    </div>
+</div>

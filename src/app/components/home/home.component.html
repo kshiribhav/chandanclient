@@ -1,0 +1,24 @@
+<!-- <div class="row">
+    <div class="col-md-3 col-sm-6" *ngFor="let item of restaurants|async">
+        <p>{{item.name}}</p>
+        <img src="{{item.imageUrl}}" height="100" width="200"/>
+    </div>
+</div> -->
+
+<div class="row"  *ngFor="let item of foodItems">
+    <div style="overflow: hidden; display: flex; justify-content:space-around;">
+        <div class="card" style="width: 18rem;">
+            <!-- {{item.imageUrl}} -->
+            <img src="https://meghastorageaccount.blob.core.windows.net/eshopimages/60e4eed4-9f1e-4121-9b80-fd6b5579594b_apple.jfif"
+                class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{item.price}}</h6>
+                <p class="card-text">{{item.description}}</p>
+                <p class="card-text">{{item.pureVeg}}</p>
+                <button (click)="placeOrder(item)" class="btn btn-primary" >Place Order</button>
+                
+            </div>
+        </div>
+    </div>
+</div>

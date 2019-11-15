@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mx-auto">
+            <h2>Add Review</h2>
+            <form #frm="ngForm" (submit)="saveReviewComment(frm,image)">
+                <div class="form-group">
+                    <label for="name">Restaurant Name</label>
+                    <select name="restaurants" *ngFor="let item of restaurants" class="dropdown">
+                        <option value={{item.id}}>{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Comments</label>
+                    <textarea rows="2" cols="50" class="form-control" name="comments" #name="ngModel"
+                        [(ngModel)]="customerReview.comments"></textarea>
+                </div>
+                <div>
+                    <label for="ratings">Rating</label>
+                    <select name="rating" class="dropdown">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="form-group padding-top-20">
+                    <button type="submit" class="btn btn-success" name="save">Save</button>
+                    <button type="button" class="btn btn-light padding-left-20" name="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
